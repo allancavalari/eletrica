@@ -62,9 +62,7 @@ pip install eletrica
 from eletrica import *
 ```
 
-Observação: Este módulo possui como dependência a biblioteca NumPy. A instalação é realizada automaticamente, se necessária.
-
-Alternativamente, pode-se importar somente as funções que serão utilizadas em seu script:
+Observação: Este módulo possui como dependência a biblioteca NumPy. A instalação é realizada automaticamente, se necessária. Alternativamente, pode-se importar somente as funções que serão utilizadas em seu script:
 
 ```python
 from eletrica import Fasor, Impedancia
@@ -135,7 +133,7 @@ As classes Fasor() e Impedancia() aceitam todos os métodos aplicados a números
 
 ## Funções auxiliares
 
-### Função Paralelo(Z1, Z2)
+> ### Paralelo(Z1, Z2)
 
 Retorna o cálculo da impedância equivalente para duas impedâncias em paralelo.
 
@@ -151,13 +149,27 @@ Resultado:
 2.500000+j2.500000
 ```
 
-### Funções para cálculo de curto-circuito
+> ### a()
 
-> As funções para cálculo de curto-circuito retornam os resultados através de matriz 3x1 contendo as correntes de sequência zero (0,0), positiva (1,0) e negativa (2,0).
+Função auxiliar a() retorna o vetor 1<120°.
 
-Através do resultado obtido, pode-se calcular as correntes de fase através da função `Fases()`, a qual aplica o método das componentes simétricas. As componentes de sequência podem ser obtidas de forma análoga através da função `Sequencias()`. As funções auxiliares `Vetor012()` e `VetorABC()` permitem gerar as matrizes através das contribuições individuais para processamento.
+```py
+a = a()
+print(a)
+```
 
-#### Função Icc1f(V, Z0, Z1, Z2, Zf)
+Resultado:
+```
+1.000000<120.00°
+```
+
+## Cálculo de curto-circuito
+
+As funções para cálculo de curto-circuito retornam os resultados através de matriz 3x1 contendo as correntes de sequência zero (0,0), positiva (1,0) e negativa (2,0).
+
+Através do resultado obtido, pode-se calcular as correntes de fase através da função `Fases()`, a qual aplica o método das componentes simétricas. As componentes de sequência podem ser obtidas de forma análoga através da função `Sequencias()`. As funções auxiliares `Vetor012()` e `VetorABC()` permitem gerar as matrizes através das correspondentes contribuições individuais.
+
+> ### Icc1f(V, Z0, Z1, Z2, Zf)
 
 Resulta nas correntes para o caso de curto-circuito monofásico, onde:
 
@@ -166,7 +178,7 @@ Resulta nas correntes para o caso de curto-circuito monofásico, onde:
 * Z2 = Impedância de sequência negativa;
 * Zf = Impedância de falta para a terra.
 
-#### Função Icc2f(V, Z1, Z2, Zf)
+> ### Icc2f(V, Z1, Z2, Zf)
 
 Resulta nas correntes para o caso de curto-circuito bifásico, onde:
 
@@ -174,7 +186,7 @@ Resulta nas correntes para o caso de curto-circuito bifásico, onde:
 * Z2 = Impedância de sequência negativa;
 * Zf = Impedância de falta entre as fases.
 
-#### Função Icc2ft(V, Z0, Z1, Z2, Zf, Zft)
+> ### Icc2ft(V, Z0, Z1, Z2, Zf, Zft)
 
 Resulta nas correntes para o caso de curto-circuito bifásico-terra, onde:
 
@@ -184,22 +196,12 @@ Resulta nas correntes para o caso de curto-circuito bifásico-terra, onde:
 * Zf = Impedância de falta;
 * Zft = Impedância de falta para terra.
 
-#### Função Icc3f(V, Z1, Zf)
+> ### Icc3f(V, Z1, Zf)
 
 Resulta nas correntes para o caso de curto-circuito trifásico, onde:
 
 * Z1 = Impedância de sequência positiva;
 * Zf = Impedância de falta.
-
-### Funções auxiliares
-
-#### Função a()
-
-Função auxiliar a() retorna o vetor 1<120°.
-
-```py
-a = a()
-```
 
 # Exemplos de aplicações
 
