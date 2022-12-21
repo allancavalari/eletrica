@@ -73,7 +73,7 @@ print("V_BN:", (1/1000*Vabc[1,0]).polar , "kV")
 print("V_CN:", (1/1000*Vabc[2,0]).polar , "kV")
 
 #
-# Tensão das fases nos terminais do gerador
+# Tensão das fases do gerador
 #
 
 Va0 = 0 - (Z0)*Ia0
