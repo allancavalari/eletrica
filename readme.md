@@ -1,3 +1,11 @@
+# Elétrica
+
+Com base na biblioteca interna de números complexos do Python (cmath), este módulo implementa as classes “Fasor” e “Impedância”, assim como, funções auxiliares, para cálculos de circuitos elétricos de corrente alternada no domínio da frequência.
+
+[Introdução](#introdução) | [Modo de uso](#modo-de-uso) | [Classes](#classes) | [Funções auxiliares](#funções-auxiliares)  | [Exemplos](#exemplos-de-aplicações) | [Notas](#notas)
+
+---
+
 # Introdução
 
 Um sinal senoidal com velocidade angular constante pode ser representado no domínio da frequência utilizando fasores.
@@ -43,10 +51,6 @@ Formato para impedâncias complexas:
 > <img src="https://latex.codecogs.com/gif.latex?\dpi{100}&space;\large&space;z&space;=&space;x&space;&plus;&space;j*y" title="\large z = x + j*y" />
 
 Considerando j = i
-
----
-
-Com base na biblioteca interna de números complexos do Python, este módulo implementa as classes “Fasor” e “Impedância”, assim como, funções auxiliares para cálculos de circuitos elétricos de corrente alternada.
  
 # Modo de uso
 
@@ -131,7 +135,7 @@ Observação: As propriedades **retangular** e **polar** são adequadas para a i
 
 As classes Fasor() e Impedancia() aceitam todos os métodos aplicados a números complexos.
 
-## Funções auxiliares
+# Funções auxiliares
 
 > ### Paralelo(Z1, Z2)
 
@@ -151,7 +155,7 @@ Resultado:
 
 > ### a()
 
-Função auxiliar a() retorna o vetor 1<120°.
+Retorna o vetor 1<120°.
 
 ```py
 a = a()
@@ -163,7 +167,7 @@ Resultado:
 1.000000<120.00°
 ```
 
-## Cálculo de curto-circuito
+## Curto-circuito
 
 As funções para cálculo de curto-circuito retornam os resultados através de matriz 3x1 contendo as correntes de sequência zero (0,0), positiva (1,0) e negativa (2,0).
 
